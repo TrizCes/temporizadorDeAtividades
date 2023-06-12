@@ -4,8 +4,9 @@ import { IButtonProps } from '../../interface/IButtonProps';
 
 class Button extends React.Component<IButtonProps>{
   render() {
+      const { type = "button" } = this.props;
       return (
-        <button className={style.botao}>
+        <button type={type} className={style.botao}>
           {this.props.children}
         </button>
       )

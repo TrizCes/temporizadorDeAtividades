@@ -1,29 +1,19 @@
-import React from "react";
 import style from './list.module.scss';
 import Item from "./item/index";
+import { IProps } from '../../interface/IProps';
 
-function List() {
-  const taresfas = [
-    {
-      tarefa: 'React',
-      tempo: '02:00:00'
-    },
-    {
-      tarefa: 'Javascript',
-      tempo: '01:00:00'
-    },
-    {
-      tarefa: 'TypeScript',
-      tempo: '01:20:00'
-    }
-  ];
+
+function List({tarefas, selecionaTarefa}: IProps) {
   return(
     <aside className={style.listaTarefas}>
-      <h2>Estudos do dia</h2>
+      <h2>
+          Estudos do dia
+      </h2>
       <ul>
-          {taresfas.map((item, index) => (
+          {tarefas.map((item, index) => (
             <Item
-            key={index}
+            selecionaTarefa = {selecionaTarefa}
+            key={item.id}
             {...item}/>
           ))}
       </ul>

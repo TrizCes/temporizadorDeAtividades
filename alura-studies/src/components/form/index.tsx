@@ -1,5 +1,5 @@
 import React from 'react';
-import Buton from '../buton';
+import Button from '../button';
 import style from './form.module.scss';
 
 class Form extends React.Component{
@@ -12,9 +12,11 @@ class Form extends React.Component{
         </div>
         <div className={style.inputContainer}>
           <label>Tempo</label>
-          <input type="time" step="1" name='tempo' id='tempo' min="00:00:00" max="01:30:00" required></input>
+          <input type="time" step="1" name='tempo' id='tempo' min="00:00:00" max="10:30:00" required></input>
         </div>
-        <Buton/>
+        <Button>
+          Adicionar 
+        </Button>
       </form>
     )
   }

@@ -2,15 +2,12 @@ import React from 'react';
 import style from './Button.module.scss';
 import { IButtonProps } from '../../interface/IButtonProps';
 
-class Button extends React.Component<IButtonProps>{
-  render() {
-      const { type = "button" } = this.props;
-      return (
-        <button type={type} className={style.botao}>
-          {this.props.children}
+function Button({onClick, type, children}: IButtonProps) {
+  return (
+    <button onClick={onClick} type={type} className={style.botao}>
+          {children}
         </button>
-      )
-  }
+  )
 }
 
 export default Button;
